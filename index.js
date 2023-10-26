@@ -3,10 +3,12 @@ const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
 const PORT = process.env.PORT || 4000;
+const cors = require('cors')
 const taskRouter = require('./route/taskRoute')
 
 //middleware
 app.use(express.json())
+app.use(cors())
 
 app.use('/api/tasks', taskRouter)
 
